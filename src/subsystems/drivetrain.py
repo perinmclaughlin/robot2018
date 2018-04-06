@@ -57,6 +57,11 @@ class Drivetrain(Subsystem):
         self.motor_rb.set(-motorF * 1.0)
         self.drive.feed()
 
+    def custom_move(self, rvolt, lvolt):
+        self.motor_lb.set(lvolt)
+        self.morot_rb.set(-rvolt)
+        self.drive.feed()
+
     def turn_right(self, voltage):
         self.motor_lb.set(voltage)
         self.motor_rb.set(voltage)
